@@ -1,0 +1,21 @@
+{
+  "name": "jest-bug-mockresolvedvalue",
+  "version": "0.0.1",
+  "description": "A simple example to show a Jest bug",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest main.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorCazanave/jest-bug-mockresolvedvalue.git"
+  },
+  "author": "Victor Cazanave <victor.cazanave@gmail.com>",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-jest": "^23.2.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.2.0"
+  }
+}
