@@ -1,7 +1,9 @@
 import 'babel-polyfill';
 
 export const API = {
-  request: () => Promise.resolve('OK')
+  request() {
+    return Promise.resolve('OK');
+  }
 };
 
 export const Client = {
@@ -9,22 +11,22 @@ export const Client = {
   catch: false,
   finally: false,
 
-  apiCall: () => {
-    Client.then = false;
-    Client.catch = false;
-    Client.finally = false;
+  callAPI() {
+    this.then = false;
+    this.catch = false;
+    this.finally = false;
 
     return API.request()
       .then(res => {
-        Client.then = true;
+        this.then = true;
         console.log('THEN', res);
       })
       .catch(err => {
-        Client.catch = true;
+        this.catch = true;
         console.log('CATCH', err);
       })
       .finally(() => {
-        Client.finally = true;
+        this.finally = true;
         console.log('FINALLY');
       });
   }

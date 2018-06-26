@@ -2,12 +2,12 @@ import { API, Client } from './main';
 
 API.request = jest.fn();
 
-describe('Client.apiCall()', () => {
+describe('Client.callAPI()', () => {
   it('Passed test with mockImplementation: should call then and finally', () => {
     API.request.mockImplementation(() => Promise.resolve('OK'));
     expect.assertions(3);
 
-    return Client.apiCall().finally(() => {
+    return Client.callAPI().finally(() => {
       expect(Client.then).toBeTruthy();
       expect(Client.catch).toBeFalsy();
       expect(Client.finally).toBeTruthy();
@@ -18,7 +18,7 @@ describe('Client.apiCall()', () => {
     API.request.mockResolvedValue('OK');
     expect.assertions(3);
 
-    return Client.apiCall().finally(() => {
+    return Client.callAPI().finally(() => {
       expect(Client.then).toBeTruthy();
       expect(Client.catch).toBeFalsy();
       expect(Client.finally).toBeTruthy();
